@@ -41,13 +41,13 @@ export class DashboardComponent {
     const test: ISensors = {
       date: new Date().toLocaleDateString(),
       time: Math.floor(new Date().getTime() / 1000).toString(),
-      voltage: '50.13',
-      current: '0.146',
-      power: '7.30',
-      RPM: '0',
-      speed: '0',
-      distanceMetters: '519.38',
-      distanceKm: '0.52',
+      voltage: (Math.random() * 50).toString(),
+      current: Math.random().toString(),
+      power: (Math.random() * 10).toString(),
+      RPM: (Math.random() * 60).toString(),
+      speed: (Math.random() * 50).toString(),
+      distanceMetters: (Math.random() * 500).toString(),
+      distanceKm: Math.random().toString(),
     };
     this.db.addElement(test);
   }
