@@ -9,3 +9,15 @@ export interface ISensors {
   distanceMetters: string;
   distanceKm: string;
 }
+
+export interface IData {
+  time: number[];
+  RPM: number[];
+  current: number[];
+  date: string[];
+  distanceKm: number[];
+  distanceMetters: number[];
+  power: number[];
+  speed: number[];
+  voltage: number[];
+}

@@ -33,6 +33,7 @@ import { LineCartComponent } from './line-cart/line-cart.component';
     AppRoutingModule,
     ReactiveFormsModule,
   ],
+  exports: [LineCartComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

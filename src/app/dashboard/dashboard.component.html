@@ -46,6 +46,7 @@
           </div>
         </div>
 
+        <!-- Adicionar datos manualmente -->
         <button (click)="addElement()">Adicionar</button>
 
         <div class="user">
@@ -58,7 +59,9 @@
         <div class="card">
           <div>
             <div class="cardName">Corriente (A)</div>
-            <div class="numbers">1,504</div>
+            <div class="numbers">
+              {{ dataGroup.current[dataGroup.current.length - 1] }}
+            </div>
           </div>
 
           <div class="iconBx">
@@ -69,7 +72,9 @@
         <div class="card">
           <div>
             <div class="cardName">Voltaje (V)</div>
-            <div class="numbers">80</div>
+            <div class="numbers">
+              {{ dataGroup.voltage[dataGroup.voltage.length - 1] }}
+            </div>
           </div>
 
           <div class="iconBx">
@@ -80,7 +85,9 @@
         <div class="card">
           <div>
             <div class="cardName">Potencia (W)</div>
-            <div class="numbers">284</div>
+            <div class="numbers">
+              {{ dataGroup.power[dataGroup.power.length - 1] }}
+            </div>
           </div>
 
           <div class="iconBx">
@@ -91,7 +98,9 @@
         <div class="card">
           <div>
             <div class="cardName">RPMs</div>
-            <div class="numbers">$7,842</div>
+            <div class="numbers">
+              {{ dataGroup.RPM[dataGroup.RPM.length - 1] }}
+            </div>
           </div>
 
           <div class="iconBx">
@@ -104,80 +113,22 @@
       <div class="details">
         <div class="recentOrders">
           <div class="cardHeader">
-            <h2>Recent Orders</h2>
-            <a href="#" class="btn">View All</a>
+            <h2>Graficas</h2>
           </div>
 
-          <app-line-cart></app-line-cart>
-
-          <table>
-            <thead>
-              <tr>
-                <td>Name</td>
-                <td>Price</td>
-                <td>Payment</td>
-                <td>Status</td>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>Star Refrigerator</td>
-                <td>$1200</td>
-                <td>Paid</td>
-                <td><span class="status delivered">Delivered</span></td>
-              </tr>
-
-              <tr>
-                <td>Dell Laptop</td>
-                <td>$110</td>
-                <td>Due</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-
-              <tr>
-                <td>Apple Watch</td>
-                <td>$1200</td>
-                <td>Paid</td>
-                <td><span class="status return">Return</span></td>
-              </tr>
-
-              <tr>
-                <td>Addidas Shoes</td>
-                <td>$620</td>
-                <td>Due</td>
-                <td><span class="status inProgress">In Progress</span></td>
-              </tr>
-
-              <tr>
-                <td>Star Refrigerator</td>
-                <td>$1200</td>
-                <td>Paid</td>
-                <td><span class="status delivered">Delivered</span></td>
-              </tr>
-
-              <tr>
-                <td>Dell Laptop</td>
-                <td>$110</td>
-                <td>Due</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-
-              <tr>
-                <td>Apple Watch</td>
-                <td>$1200</td>
-                <td>Paid</td>
-                <td><span class="status return">Return</span></td>
-              </tr>
-
-              <tr>
-                <td>Addidas Shoes</td>
-                <td>$620</td>
-                <td>Due</td>
-                <td><span class="status inProgress">In Progress</span></td>
-              </tr>
-            </tbody>
-          </table>
+          <div>
+            <app-line-cart
+              [Incurrent]="dataGroup.current"
+              [Indate]="dataGroup.date"
+              [IndistanceKm]="dataGroup.distanceKm"
+              [IndistanceMetters]="dataGroup.distanceMetters"
+              [Inpower]="dataGroup.power"
+              [InRPM]="dataGroup.RPM"
+              [Inspeed]="dataGroup.speed"
+              [Intime]="dataGroup.time"
+              [Involtage]="dataGroup.voltage"
+            ></app-line-cart>
+          </div>
         </div>
       </div>
     </div>
