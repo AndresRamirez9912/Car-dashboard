@@ -1,0 +1,34 @@
+<body>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+
+  <form [formGroup]="register" id="loginForm">
+    <h3>Login Here</h3>
+
+    <label for="email">Email</label>
+    <input
+      type="email"
+      placeholder="Correo"
+      id="email"
+      name="email"
+      formControlName="email"
+    />
+
+    <label for="password">Password</label>
+    <input
+      type="password"
+      placeholder="Clave"
+      id="password"
+      name="password"
+      formControlName="password"
+    />
+
+    <button (click)="logIn()" [disabled]="register.invalid">Log In</button>
+    <button (click)="registerUser()" [disabled]="register.invalid">
+      Register
+    </button>
+    <div class="social"></div>
+  </form>
+</body>
